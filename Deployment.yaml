@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-deployment
+  labels:
+    app: flask
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: flask
+  template:
+    metadata:
+      name: webapp-pod
+      labels:
+        app: flask
+    spec:
+      containers:
+        - name: webapp-pod
+          image: webapp:latest
+          imagePullPolicy: Never

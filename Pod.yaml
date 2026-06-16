@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: webapp-pod
+  labels:
+    app: flask
+spec:
+  containers:
+    - name: webapp-pod
+      image: webapp:latest
